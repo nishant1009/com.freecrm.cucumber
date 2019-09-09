@@ -2,15 +2,13 @@ Feature: FreeCrm Contacts module functionality
 
 Background: Launching of FreeCrm Site
 
-Scenario Outline: Login to FreeCrm Site with valid credentials
+Given Webdriver is initialized and FreeCrm site is launched
 Given User navigates to Login Page
-When User enters valid "<userName>" and "<password>"
+When User enters valid "nishant_online@rediffmail.com" and "23Jan2007"
 And Clicks on Login button
 Then Login should be successfull
 
-Examples:
-|userName											|password|
-|nishant_online@rediffmail.com|23Jan2007|
+
 
 Scenario Outline: Verify User is able to create a new Contact successfully
 Given User is on Contacts page
