@@ -55,5 +55,9 @@ public class TestBase {
 	public String getText(WebDriver driver, By element){
 		return driver.findElement(element).getText();
 	}
+	
+	public boolean checkEnable(WebDriver driver, By element){
+		return driver.findElement(element).isEnabled();
+	}
 
 }
