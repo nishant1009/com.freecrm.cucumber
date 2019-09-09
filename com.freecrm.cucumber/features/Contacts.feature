@@ -20,3 +20,14 @@ Then Contacts should be saved successfully
 Examples:
 |FirstName|LastName|Position		|Department|
 |TC-FN		|TC-LN	 |Team Member	|QA				 |
+
+
+Scenario: Verify edit functionality of Contacts
+
+Given Contacts exists in CRM application
+When User edits the contacts
+And Saves the Contact 
+Then Contact should be saved successfully
+
+|Description|City|
+|Automation|Pune|

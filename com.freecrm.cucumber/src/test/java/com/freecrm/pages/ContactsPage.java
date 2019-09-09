@@ -24,6 +24,41 @@ public class ContactsPage {
 	private By department= By.xpath("//input[@name='department']");
 	private By contactSaveButton= By.xpath("//button[@class='ui linkedin button']");
 	private By contactSaveCheck= By.xpath("//*[@id='dashboard-toolbar']/div[1]");
+	private By contact= By.xpath("//tbody/tr[1]");
+	private By contactEditButton = By.xpath("//*[@id='ui']/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[6]/a[2]/button/i");
+	private By contactDescription =By.xpath("//textarea[@name='description']");
+	private By contactCity = By.xpath("//input[@name='city']");
+	private By contactDescriptionCheck = By.xpath("//*[@id='ui']/div/div[2]/div[2]/div/div[2]/div/div[1]/div/div/div[6]/div[2]/div/span/p");
+	
+	
+	
+	public By getcontactDescriptionCheck(){
+		return contactDescriptionCheck;
+	}
+	
+	
+	
+	public By getContactCity(){
+		
+		return contactCity;
+	}
+	
+	
+	public By getContactDescription(){
+		
+		return contactDescription;
+	}
+	
+	
+	public By getcontactEditButton(){
+		return contactEditButton;
+	}
+	
+	
+	public By getContact(){
+		
+		return contact;
+	}
 
 	public By getcontactSaveCheck(){
 		return contactSaveCheck;

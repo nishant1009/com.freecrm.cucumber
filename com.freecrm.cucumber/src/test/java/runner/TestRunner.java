@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="features",
+		features="\\Users\\dell\\git\\com.freecrm.cucumber\\com.freecrm.cucumber\\features\\Contacts.feature",
 		glue={"stepDefination"},
 		plugin={"html:target/execution-reports"},
 		dryRun=false
