@@ -59,5 +59,14 @@ public class TestBase {
 	public boolean checkEnable(WebDriver driver, By element){
 		return driver.findElement(element).isEnabled();
 	}
+	
+	public void acceptPopupMsg(){
+		driver.switchTo().alert().accept();
+	}
+	
+	public String getPopupMsg(){
+		
+		return driver.switchTo().alert().getText();
+	}
 
 }

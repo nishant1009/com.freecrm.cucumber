@@ -27,7 +27,13 @@ Scenario: Verify edit functionality of Contacts
 Given Contacts exists in CRM application
 When User edits the contacts
 And Saves the Contact 
-Then Contact should be saved successfully
+Then Contact should be editted successfully
 
-|Description|City|
-|Automation|Pune|
+#|Description|City|
+#|Automation|Pune|
+
+Scenario: Verify delete functionality of Contacts
+
+Given Contacts exists in CRM application
+When User selects Contacts and deletes the selected Contact
+Then selected contacts should be deleted successfully 

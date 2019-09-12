@@ -10,6 +10,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features="\\Users\\dell\\git\\com.freecrm.cucumber\\com.freecrm.cucumber\\features\\Contacts.feature",
 		glue={"stepDefination"},
+		format={"pretty", "html:target/Destination"},
 		plugin={"html:target/execution-reports"},
 		dryRun=false
 		)

@@ -14,7 +14,7 @@ import cucumber.api.java.en.When;
 public class Contacts {
 	
 	ScenarioContext scenarioContext;
-	public String contactDescription;
+	public String contactDescription="Automation";
 	
 	public Contacts(ScenarioContext scenarioContext){
 		this.scenarioContext=scenarioContext;
@@ -45,8 +45,9 @@ public class Contacts {
 	}
 
 	@When("^User clicks on Save button$")
-	public void user_clicks_on_Save_button(){
+	public void user_clicks_on_Save_button() throws InterruptedException{
 		scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getContactSaveButton());
+		Thread.sleep(1500);
 	    
 	}
 
@@ -65,28 +66,41 @@ public class Contacts {
 
 	@When("^User edits the contacts$")
 	public void user_edits_the_contacts() throws Exception {
+		Thread.sleep(2000);
 		scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getContact());
 		Thread.sleep(2000);
 		scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getcontactEditButton());
+		Thread.sleep(1500);
 		
 		
 	   
 	}
+
+//	@When("^Saves the Contact$")
+//	public void saves_the_Contact(//DataTable dataTable){
+//		//for(Map<String,String> data : dataTable.asMaps(String.class, String.class)){
+//			
+//			//scenarioContext.testBase.sendKeys(scenarioContext.driver, scenarioContext.contactsPage.getContactDescription(),"Automation");
+//			//contactDescription= data.get("Description");
+//			scenarioContext.testBase.sendKeys(scenarioContext.driver, scenarioContext.contactsPage.getContactDescription(), "Automation");
+//			scenarioContext.testBase.sendKeys(scenarioContext.driver, scenarioContext.contactsPage.getContactCity(), "Pune");
+//			scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getContactSaveButton());
+//			   
+//	}
 
 	@When("^Saves the Contact$")
-	public void saves_the_Contact(DataTable credentials){
-		for(Map<String,String> data : credentials.asMaps(String.class, String.class)){
-			
-			scenarioContext.testBase.sendKeys(scenarioContext.driver, scenarioContext.contactsPage.getContactDescription(), data.get("Description"));
-			contactDescription= data.get("Description");
-			scenarioContext.testBase.sendKeys(scenarioContext.driver, scenarioContext.contactsPage.getContactCity(), data.get("City"));
-			scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getContactSaveButton());
-		}
+	public void saves_the_Contact() throws Exception{
+		scenarioContext.testBase.sendKeys(scenarioContext.driver, scenarioContext.contactsPage.getContactDescription(), "Automation");
+		Thread.sleep(1500);
+		scenarioContext.testBase.sendKeys(scenarioContext.driver, scenarioContext.contactsPage.getContactCity(), "Pune");
+		Thread.sleep(1500);
+		scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getContactSaveButton());
+		Thread.sleep(1500);
 		
-	   
-	}
+	  
+}
 
-	@Then("^Contact should be saved successfully$")
+	@Then("^Contact should be editted successfully$")
 	public void contact_should_be_saved_successfully() {
 		String descriptionCheck=scenarioContext.testBase.getText(scenarioContext.driver, scenarioContext.contactsPage.getcontactDescriptionCheck());
 	    System.out.println(descriptionCheck);
@@ -94,7 +108,33 @@ public class Contacts {
 	    Assert.assertTrue(contactDescription.equals(descriptionCheck));
 	}
 	
-	
+	@When("^User selects Contacts and deletes the selected Contact$")
+	public void user_selects_Contacts_and_deletes_the_selected_Contact() throws Exception {
+		
+		Thread.sleep(2000);
+		scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getContact());
+		Thread.sleep(2000);
+		scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getcontactDeleteDropdown());
+		Thread.sleep(1000);
+		scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getcontactDeleteDropdownOption());
+		Thread.sleep(1000);
+		scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getContactDeleteButton());
+		Thread.sleep(1000);
+	    
+	}
+
+	@Then("^selected contacts should be deleted successfully$")
+	public void selected_contacts_should_be_deleted_successfully() throws Exception {
+		Thread.sleep(1000);
+		String deleteConfirmation=scenarioContext.testBase.getText(scenarioContext.driver, scenarioContext.contactsPage.getcontactDeleteConfirmationMsg());
+		System.out.println(deleteConfirmation);
+		scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getcontactDeleteConfirmButton());
+		
+		Assert.assertTrue(deleteConfirmation.equals("Confirm Deletion"));
+		
+		Thread.sleep(1000);
+	    
+	}
 
 
 }

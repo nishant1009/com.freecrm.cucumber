@@ -29,7 +29,40 @@ public class ContactsPage {
 	private By contactDescription =By.xpath("//textarea[@name='description']");
 	private By contactCity = By.xpath("//input[@name='city']");
 	private By contactDescriptionCheck = By.xpath("//*[@id='ui']/div/div[2]/div[2]/div/div[2]/div/div[1]/div/div/div[6]/div[2]/div/span/p");
+	private By contactDeleteDropdown= By.xpath("//div[@name='action']");
+	private By contactDeleteDropdownOption= By.xpath("//div[@name='action']//div[@role='option'][@aria-checked='false']");
+	private By contactDeleteButton=By.xpath("//div/i[@class='checkmark icon']");
+	private By contactDeleteConfirmButton= By.xpath("//div[@class='actions']//button[contains(text(),'Delete')]");
+	private By contactDeleteConfirmationMsg= By.xpath("//div[@class='content']");
 	
+	
+	public By getcontactDeleteConfirmButton(){
+		
+		return contactDeleteConfirmButton;
+	}
+	
+	public By getcontactDeleteConfirmationMsg(){
+		
+		return contactDeleteConfirmationMsg;
+	}
+	
+	
+	public By getContactDeleteButton(){
+		
+		return contactDeleteButton;
+	}
+	
+	
+	
+	public By getcontactDeleteDropdownOption(){
+		return contactDeleteDropdownOption;
+	}
+	
+	
+	public By getcontactDeleteDropdown(){
+		
+		return contactDeleteDropdown;
+	}
 	
 	
 	public By getcontactDescriptionCheck(){
