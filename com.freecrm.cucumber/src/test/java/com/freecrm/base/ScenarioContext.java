@@ -3,6 +3,7 @@ package com.freecrm.base;
 import org.openqa.selenium.WebDriver;
 
 import com.freecrm.pages.ContactsPage;
+import com.freecrm.pages.DealsPage;
 import com.freecrm.pages.LoginPage;
 import com.freecrm.utilities.RandomNumberGeneration;
 import com.freecrm.utilities.ReadPropertyFile;
@@ -17,6 +18,7 @@ public class ScenarioContext {
 	public LoginPage loginPage;
 	public ContactsPage contactsPage;
 	public RandomNumberGeneration randomNumberGeneration;
+	public DealsPage dealsPage;
 	
 	
 	public ScenarioContext(){
@@ -26,6 +28,7 @@ public class ScenarioContext {
 		loginPage = new LoginPage(driver); 
 		contactsPage = new ContactsPage(driver);
 		randomNumberGeneration= new RandomNumberGeneration();
+		dealsPage = new DealsPage(driver);
 		
 	}
 	

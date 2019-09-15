@@ -34,7 +34,66 @@ public class ContactsPage {
 	private By contactDeleteButton=By.xpath("//div/i[@class='checkmark icon']");
 	private By contactDeleteConfirmButton= By.xpath("//div[@class='actions']//button[contains(text(),'Delete')]");
 	private By contactDeleteConfirmationMsg= By.xpath("//div[@class='content']");
+	private By contactShowFilterButton=By.xpath("//button[contains(text(),'Show Filters')]");
+	private By contactSearchField = By.xpath("//input[@class='search']");
+	private By contactSearchAllOptions = By.xpath("//div[@name='name'] [@role='combobox']/div[2]");
+	private By contactSearchFilter= By.xpath("//*[@id='ui']/div/div[2]/div[2]/div/div[2]/form/div[1]/div[2]/div/button[5]/i");
+	private By contactSearchValue= By.xpath("//input[@name='value']");
+	private By contactSearchOperator= By.xpath("//div[@name='operator']");
+	private By contactSearchCheck=By.xpath("//tbody/tr/td[3]");
+	private By contactSearchColumnButton=By.xpath("//i[@class='columns small icon']");
+	private By contactSearchColumnAccess=By.xpath("/html/body/div[3]/div/div[2]/div/div[1]/div/div[2]/div[2]/div/label");
+	private By contactSearchColumnSetButton=By.xpath("//button[@class='ui button']");
+	private By contactSearchColumnsCheck=By.xpath("//tr/th");
 	
+	
+	public By getcontactSearchColumnsCheck(){
+		return contactSearchColumnsCheck;
+	}
+	
+	public By getcontactSearchColumnSetButton(){
+		return contactSearchColumnSetButton;
+	}
+	public By getcontactSearchColumnAccess(){
+		return contactSearchColumnAccess;
+	}
+	
+	
+	
+	public By getcontactSearchColumnButton(){
+		return contactSearchColumnButton;
+	}
+	
+	
+	public By getcontactSearchCheck(){
+		return contactSearchCheck;
+	}
+	
+	
+	public By getcontactSearchOperator(){
+		return contactSearchOperator;
+	}
+	
+	
+	public By getcontactSearchValue(){
+		return contactSearchValue;
+	}
+	
+	public By getcontactSearchFilter(){
+		return contactSearchFilter;
+	}
+	public By getcontactSearchAllOptions(){
+		return contactSearchAllOptions;
+	}
+	
+	
+	public By getcontactSearchField(){
+		return contactSearchField;
+	}
+	
+	public By getcontactShowFilterButton(){
+		return contactShowFilterButton;
+	}
 	
 	public By getcontactDeleteConfirmButton(){
 		

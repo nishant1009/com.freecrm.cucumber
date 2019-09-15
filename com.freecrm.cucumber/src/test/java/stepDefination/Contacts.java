@@ -1,8 +1,11 @@
 package stepDefination;
 
+import java.util.List;
 import java.util.Map;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import com.freecrm.base.ScenarioContext;
 
@@ -135,6 +138,72 @@ public class Contacts {
 		Thread.sleep(1000);
 	    
 	}
+	
+	@When("^User search the contact using \"([^\"]*)\"$")
+	public void user_search_the_contact_using(String Address) throws Exception {
+		scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getcontactShowFilterButton());
+	    Thread.sleep(1000);
+	    scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getcontactSearchField());
+	    List<WebElement> searchOptions=scenarioContext.driver.findElements(By.xpath("//div[@name='name'][@role='combobox']/div[2]/div[@role='option']"));
+	    for(WebElement option: searchOptions){
+	    	if(option.getText().contains("Address")){
+	    		
+	    		option.click();
+	    		
+	    	}
+	    	
+	    	
+	    }
+	    scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getcontactSearchOperator());
+	    scenarioContext.testBase.sendKeys(scenarioContext.driver, scenarioContext.contactsPage.getcontactSearchOperator(), "Contains");
+	    scenarioContext.testBase.sendKeys(scenarioContext.driver, scenarioContext.contactsPage.getcontactSearchValue(), Address);
+	    scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getcontactSearchFilter());
+	    Thread.sleep(2000);
+	   
+	}
+	    @Then("^User should see only contacts having matching address$")
+	    public void user_should_see_only_contacts_having_matching_address() throws Exception  {
+	    	Thread.sleep(2000);
+	    	String actualSearch=scenarioContext.testBase.getText(scenarioContext.driver, scenarioContext.contactsPage.getcontactSearchCheck());
+	        Assert.assertTrue(actualSearch.equals("Pune"));
+	    }
+	    
+	    @When("^User add a column to be displayed in result grid$")
+	    public void user_add_a_column_to_be_displayed_in_result_grid() throws Exception  {
+	    	scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getcontactShowFilterButton());
+		    Thread.sleep(1000);
+		    scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getcontactSearchColumnButton());
+		    Thread.sleep(2500);
+		    scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getcontactSearchColumnAccess());
+		    scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getcontactSearchColumnSetButton());
+		    Thread.sleep(1500);
+	    }
 
-
+	    @Then("^Column should be added in result grid$")
+	    public void column_should_be_added_in_result_grid() {
+	    	List<WebElement> searchColumns=scenarioContext.driver.findElements(By.xpath("//tr/th"));
+	    	String columnCheck=null;
+	    	for(WebElement column:searchColumns){
+	    		
+	    		if(column.getText().contains("Access")){
+	    			columnCheck=column.getText();
+	    			System.out.println(column.getText());
+	    		}
+	    	Assert.assertTrue(columnCheck.equals("Access"));
+	    	}
+	        
+	    }
+	    
+	    
+	    
+	    
+	    
+	    
+	    
 }
+
+	
+
+
+
+
