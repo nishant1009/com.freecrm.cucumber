@@ -182,15 +182,17 @@ public class Contacts {
 	    @Then("^Column should be added in result grid$")
 	    public void column_should_be_added_in_result_grid() {
 	    	List<WebElement> searchColumns=scenarioContext.driver.findElements(By.xpath("//tr/th"));
-	    	String columnCheck=null;
+	    	boolean col= false;
 	    	for(WebElement column:searchColumns){
 	    		
 	    		if(column.getText().contains("Access")){
-	    			columnCheck=column.getText();
-	    			System.out.println(column.getText());
+	    			col=true;
 	    		}
-	    	Assert.assertTrue(columnCheck.equals("Access"));
+	    	
+	    	System.out.println(column.getText());
 	    	}
+	    	Assert.assertTrue(col);
+	    	
 	        
 	    }
 	    
