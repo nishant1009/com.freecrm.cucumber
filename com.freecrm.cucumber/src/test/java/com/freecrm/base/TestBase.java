@@ -22,24 +22,24 @@ public class TestBase {
 	
 	public WebDriver initializeWebDriver(){
 		
-		switch(browser.toLowerCase()){
+		//switch(browser.toLowerCase()){
 		
-		case "chrome":
+		//case "chrome":
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "\\src\\test\\resources\\Drivers\\chromedriver.exe");
 			driver= new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.get(url);
-			break;
+			//break;
 			
-		case "internetexplorer":
-			System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")+ "\\src\\test\\resources\\Drivers\\IEDriverServer.exe");
-			driver=new InternetExplorerDriver();
-			driver.manage().window().maximize();
-			driver.get(url);
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			break;
-		}
+		//case "internetexplorer":
+//			System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")+ "\\src\\test\\resources\\Drivers\\IEDriverServer.exe");
+//			driver=new InternetExplorerDriver();
+//			driver.manage().window().maximize();
+//			driver.get(url);
+//			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//			break;
+		//}
 		return driver;
 	}
 	
