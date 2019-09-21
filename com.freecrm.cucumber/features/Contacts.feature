@@ -29,8 +29,8 @@ When User edits the contacts
 And Saves the Contact 
 Then Contact should be editted successfully
 
-|Description|City|
-|Automation|Pune|
+#|Description|City|
+#|Automation|Pune|
 
 Scenario: Verify delete functionality of Contacts
 
