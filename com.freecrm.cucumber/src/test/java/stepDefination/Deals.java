@@ -27,7 +27,7 @@ public class Deals {
 
 	@When("^User clicks on New Deal button$")
 	public void user_clicks_on_New_Deal_button() throws Throwable {
-		
+		Thread.sleep(2000);
 		scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.dealsPage.getNewDealButton());
 	    
 	}

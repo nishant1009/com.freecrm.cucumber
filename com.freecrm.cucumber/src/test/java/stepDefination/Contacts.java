@@ -143,6 +143,7 @@ public class Contacts {
 	
 	@When("^User search the contact using \"([^\"]*)\"$")
 	public void user_search_the_contact_using(String Address) throws Exception {
+		Thread.sleep(2000);
 		scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getcontactShowFilterButton());
 	    Thread.sleep(1000);
 	    scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getcontactSearchField());
