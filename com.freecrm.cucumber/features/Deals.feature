@@ -9,15 +9,15 @@ And Clicks on Login button
 Then Login should be successfull
 
 
-Scenario Outline: Verify User is able to create a new Deal
-
-Given User is present on Deals Page
-When User clicks on New Deal button
-And enters "<Title>", "<Description>", "<Probability>" and "<Amount>" and Saves the deal
-Then deal should be created successfully
-Examples:
-|Title|Description|Probability|Amount|
-|TD		|Test Deal	|60					|950	 |
+#Scenario Outline: Verify User is able to create a new Deal
+#
+#Given User is present on Deals Page
+#When User clicks on New Deal button
+#And enters "<Title>", "<Description>", "<Probability>" and "<Amount>" and Saves the deal
+#Then deal should be created successfully
+#Examples:
+#|Title|Description|Probability|Amount|
+#|TD		|Test Deal	|60					|950	 |
 
 #Scenario Outline: Verify User is able to edit the deal
 #
