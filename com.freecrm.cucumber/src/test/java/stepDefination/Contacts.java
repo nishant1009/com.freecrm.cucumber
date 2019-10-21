@@ -3,11 +3,13 @@ package stepDefination;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.freecrm.base.ScenarioContext;
+
 
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
@@ -26,7 +28,7 @@ public class Contacts {
 	@Given("^User is on Contacts page$")
 	public void user_is_on_Contacts_page(){
 		scenarioContext.testBase.click(scenarioContext.driver, scenarioContext.contactsPage.getContactLink());
-	    
+		
 	}
 
 	@When("^User Click on New Contacts button$")
@@ -180,7 +182,8 @@ public class Contacts {
 	    }
 
 	    @Then("^Column should be added in result grid$")
-	    public void column_should_be_added_in_result_grid() {
+	    public void column_should_be_added_in_result_grid() throws Exception {
+	    	 Thread.sleep(1500);
 	    	List<WebElement> searchColumns=scenarioContext.driver.findElements(By.xpath("//tr/th"));
 	    	boolean col= false;
 	    	for(WebElement column:searchColumns){

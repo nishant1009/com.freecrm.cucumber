@@ -24,11 +24,11 @@ Examples:
 
 Scenario: Verify edit functionality of Contacts
 
-Given Contacts exists in CRM application
-When User edits the contacts
-And Saves the Contact 
-Then Contact should be editted successfully
-
+#Given Contacts exists in CRM application
+#When User edits the contacts
+#And Saves the Contact 
+#Then Contact should be editted successfully
+#
 #|Description|City|
 #|Automation|Pune|
 
@@ -48,7 +48,7 @@ Examples:
 |Pune|
 
 
-Scenario: Verify User is able to add column in result grid
-Given User is on Contacts page
-When User add a column to be displayed in result grid
-Then Column should be added in result grid
+#Scenario: Verify User is able to add column in result grid
+#Given User is on Contacts page
+#When User add a column to be displayed in result grid
+#Then Column should be added in result grid
