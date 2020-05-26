@@ -17,7 +17,7 @@ import cucumber.api.junit.Cucumber;
 		features="features",
 		glue={"stepDefination"},
 		format={"pretty", "html:target/Destination"},
-		plugin={"com.cucumber.listener.ExtentCucumberFormatter:target/FreeCrmTestReport.html "},
+		plugin={"com.cucumber.listener.ExtentCucumberFormatter:src/test/resources/FreeCrmTestReport.html "},
 		dryRun=false,
 		monochrome=true
 		)
