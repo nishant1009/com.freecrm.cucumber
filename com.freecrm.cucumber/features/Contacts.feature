@@ -24,13 +24,13 @@ Examples:
 
 Scenario: Verify edit functionality of Contacts
 
-#Given Contacts exists in CRM application
-#When User edits the contacts
-#And Saves the Contact 
-#Then Contact should be editted successfully
-#
-#|Description|City|
-#|Automation|Pune|
+Given Contacts exists in CRM application
+When User edits the contacts
+And Saves the Contact 
+Then Contact should be editted successfully
+
+|Description|City|
+|Automation|Pune|
 
 Scenario: Verify delete functionality of Contacts
 
@@ -38,17 +38,17 @@ Given Contacts exists in CRM application
 When User selects Contacts and deletes the selected Contact
 Then selected contacts should be deleted successfully 
 
-#Scenario Outline: Verify User is able to search contact based upon address
-#Given User is on Contacts page
-#When User search the contact using "<Address>"
-#Then User should see only contacts having matching address
-#
-#Examples:
-#|Address|
-#|Pune|
+Scenario Outline: Verify User is able to search contact based upon address
+Given User is on Contacts page
+When User search the contact using "<Address>"
+Then User should see only contacts having matching address
+
+Examples:
+|Address|
+|Pune|
 
 
-#Scenario: Verify User is able to add column in result grid
-#Given User is on Contacts page
-#When User add a column to be displayed in result grid
-#Then Column should be added in result grid
+Scenario: Verify User is able to add column in result grid
+Given User is on Contacts page
+When User add a column to be displayed in result grid
+Then Column should be added in result grid

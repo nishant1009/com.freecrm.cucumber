@@ -25,7 +25,7 @@ public class TestBase {
 		//switch(browser.toLowerCase()){
 		
 		//case "chrome":
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "\\src\\test\\resources\\Drivers\\chromedriver78.exe");
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "\\src\\test\\resources\\Drivers\\chromedriver.exe");
 			driver= new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
